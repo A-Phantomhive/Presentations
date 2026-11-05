@@ -1,0 +1,432 @@
+/* Two-column layout for ioslides; PPTX uses the Markdown column widths. */
+slides slide .columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+slides slide .columns > .column:first-child {
+  flex: 0 0 32%;
+}
+slides slide .columns > .column:last-child {
+  flex: 1;
+  min-width: 0;
+}
+slides slide .column img {
+  max-width: 100%;
+  max-height: 440px;
+  object-fit: contain;
+}
+slides slide .column h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+slides slide .column ul {
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+slides slide .column li {
+  margin-bottom: 8px;
+}
+
+/* Center the portrait and leave space before the larger name. */
+slides slide .profile-column {
+  text-align: center;
+}
+slides slide .profile-column > img {
+  display: block;
+  margin: 0 auto;
+}
+slides slide .profile-column > p {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.3;
+  text-align: center;
+}
+slides slide .profile-column > img + p {
+  margin-top: 24px;
+}
+slides slide .profile-column > p + p {
+  margin-top: 12px;
+}
+
+
+/* Blue subsection headings on every HTML slide. */
+slides slide h3,
+slides slide h4,
+slides slide h5,
+slides slide h6 {
+  color: #4A90D9;
+}
+
+/* Slide titles, including the cover title. */
+slides slide h1,
+slides slide h2 {
+  color: #1565C0;
+}
+
+/* Very pale yellow background on all slides, including the cover. */
+slides > slide {
+  background-color: #FFFEF2;
+  background-image: none;
+}
+
+
+
+
+
+/* History slide: origins above, English meanings and image below. */
+slides slide .stigma-roots {
+  font-size: 21px;
+  line-height: 1.35;
+  border-bottom: 2px solid #DCE4DC;
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+}
+slides slide .stigma-roots p {
+  margin: 0 0 12px;
+}
+slides slide .stigma-roots strong {
+  color: #1565C0;
+}
+slides slide .stigma-history {
+  align-items: center;
+  min-height: 285px;
+}
+slides slide .stigma-history > .column:first-child {
+  flex: 0 0 49%;
+  font-size: 21px;
+  line-height: 1.4;
+}
+slides slide .stigma-history > .column:last-child {
+  flex: 1;
+  text-align: center;
+}
+slides slide .stigma-history p {
+  margin: 0 0 14px;
+}
+slides slide .stigma-history img {
+  display: block;
+  width: 100%;
+  height: 285px;
+  max-height: 285px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Goffman: portrait and biography left, works right. */
+slides slide .goffman-layout {
+  gap: 34px;
+  align-items: flex-start;
+  font-size: 20px;
+  line-height: 1.35;
+}
+slides slide .goffman-layout > .column:first-child {
+  flex: 0 0 43%;
+}
+slides slide .goffman-layout > .column:last-child {
+  flex: 1;
+  padding-left: 24px;
+  border-left: 2px solid #DCE4DC;
+}
+slides slide .goffman-layout p {
+  margin: 0 0 14px;
+}
+slides slide .goffman-person img {
+  display: block;
+  height: 210px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 0 18px;
+}
+slides slide .goffman-works img {
+  display: block;
+  height: 230px;
+  width: auto;
+  object-fit: contain;
+  margin: 18px auto 0;
+}
+
+/* Definition: spacious quotation with emphasized key concepts. */
+slides slide .definition-quote {
+  font-size: 24px;
+  line-height: 1.8;
+  border-left: 4px solid #4A90D9;
+  padding: 8px 0 8px 24px;
+  margin-top: 18px;
+}
+slides slide .definition-quote p {
+  font-size: 24px;
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+slides slide .definition-quote p:last-child {
+  text-align: right;
+  font-size: 22px;
+  color: #1565C0;
+  margin-bottom: 0;
+}
+
+
+
+/* Definition keywords and illustration. */
+slides slide .keyword-layout {
+  align-items: center;
+  gap: 32px;
+  min-height: 420px;
+}
+slides slide .keyword-layout > .column:first-child {
+  flex: 0 0 40%;
+}
+slides slide .keyword-layout > .column:last-child {
+  flex: 1;
+}
+slides slide .keyword-layout ul {
+  font-size: 26px;
+  line-height: 1.6;
+}
+slides slide .keyword-layout li {
+  margin-bottom: 18px;
+}
+slides slide .keyword-layout img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Three sociological explanations with their matching illustrations. */
+slides slide:has(article#stigma-persistence) h2 {
+  font-size: 34px;
+  line-height: 1.2;
+}
+slides slide .sociology-columns {
+  gap: 24px;
+  align-items: stretch;
+}
+slides slide .sociology-columns > .column:nth-child(n) {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+slides slide .sociology-columns h4 {
+  font-size: 23px;
+  line-height: 1.3;
+  min-height: 90px;
+  margin: 0 0 12px;
+}
+slides slide .sociology-columns p {
+  font-size: 20px;
+  line-height: 1.45;
+  margin: 0 0 16px;
+}
+slides slide .sociology-columns img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  max-height: 200px;
+  object-fit: contain;
+  margin-top: auto;
+}
+slides slide .sociology-columns p:has(img) {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+/* Campaign discussion: a prompt followed by two spacious examples. */
+slides slide:has(article#campaigns-complexity) h2 {
+  font-size: 34px;
+  line-height: 1.2;
+}
+slides slide .campaign-opinions h3 {
+  font-size: 24px;
+  line-height: 1.3;
+  margin: 14px 0 12px;
+}
+slides slide .campaign-opinions ul,
+slides slide .campaign-opinions li,
+slides slide .campaign-opinions li p {
+  font-size: 26px;
+  line-height: 1.55;
+}
+slides slide .campaign-opinions li {
+  margin-bottom: 10px;
+  padding-left: 8px;
+}
+
+
+/* Biological explanations debate: text and attribution illustration. */
+slides slide:has(article#biological-debate) h2 {
+  font-size: 34px;
+  line-height: 1.2;
+}
+slides slide .debate-content h3 {
+  font-size: 25px;
+  line-height: 1.35;
+  margin: 8px 0 24px;
+}
+slides slide .debate-columns {
+  align-items: center;
+  gap: 28px;
+}
+slides slide .debate-columns > .column:first-child {
+  flex: 0 0 57%;
+}
+slides slide .debate-columns > .column:last-child {
+  flex: 1;
+}
+slides slide .debate-columns ul,
+slides slide .debate-columns li,
+slides slide .debate-columns li p {
+  font-size: 22px;
+  line-height: 1.5;
+}
+slides slide .debate-columns li {
+  margin-bottom: 24px;
+}
+slides slide .debate-columns img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: contain;
+}
+
+/* Shorter discussion text leaves room for emphasis and explanation. */
+slides slide .campaign-opinions > p {
+  font-size: 25px;
+  line-height: 1.5;
+  margin-top: 26px;
+  color: #1565C0;
+}
+slides slide .debate-columns p {
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 0 0 18px;
+}
+slides slide .debate-columns h4 {
+  margin-top: 20px;
+}
+
+/* Continuum beliefs: two equally sized illustrations. */
+slides slide:has(article#continuum-beliefs) h2 {
+  font-size: 34px;
+  line-height: 1.2;
+}
+slides slide .continuum-content h3 {
+  font-size: 26px;
+  line-height: 1.35;
+  margin: 10px 0 28px;
+}
+slides slide .continuum-images {
+  align-items: center;
+  gap: 30px;
+  min-height: 350px;
+}
+slides slide .continuum-images > .column:nth-child(n) {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+}
+slides slide .continuum-images img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  max-height: 350px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+slides slide .continuum-images p {
+  margin: 0;
+}
+
+/* Research slides: actual stimuli, short findings and implications. */
+slides slide:has(.class-study) h2 {
+  font-size: 36px;
+  line-height: 1.2;
+}
+slides slide .class-study p {
+  font-size: 25px;
+  line-height: 1.45;
+  margin: 0 0 18px;
+}
+slides slide .stimulus-row {
+  gap: 14px;
+  align-items: flex-start;
+  margin: 22px 0;
+}
+slides slide .stimulus-row > .column:nth-child(n) {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+}
+slides slide .stimulus-row img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  max-height: 210px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+slides slide .stimulus-row p {
+  font-size: 19px;
+  line-height: 1.3;
+  margin: 0 0 6px;
+}
+slides slide .study-materials > p:last-child {
+  color: #1565C0;
+  font-size: 28px;
+  margin-top: 22px;
+}
+slides slide .study-takeaways h3 {
+  font-size: 28px;
+  line-height: 1.3;
+  margin: 26px 0 12px;
+}
+slides slide .study-takeaways p {
+  font-size: 27px;
+  line-height: 1.5;
+  margin: 0 0 28px;
+}
+
+/* Two-by-two stimulus conditions, with shared row and column labels. */
+slides slide .study-materials table {
+  width: 100%;
+  margin: 12px 0 16px;
+  border-collapse: collapse;
+  font-size: 22px;
+  line-height: 1.25;
+}
+slides slide .study-materials th,
+slides slide .study-materials td {
+  padding: 6px 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid #DCE4DC;
+}
+slides slide .study-materials th {
+  color: #FFFFFF;
+}
+slides slide .study-materials td img {
+  display: block;
+  width: auto;
+  height: 135px;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+}
+slides slide .study-materials td p {
+  margin: 0;
+}
+slides slide .study-materials > p {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+slides slide .study-materials > p:last-child {
+  font-size: 27px;
+  margin-top: 14px;
+}
+

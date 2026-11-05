@@ -1,0 +1,8 @@
+* text=auto
+*.R text eol=lf
+*.Rmd text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.Rproj text eol=lf
+*.png binary
+*.jpg binary
