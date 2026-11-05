@@ -16,3 +16,14 @@ RStudio 通常自带 Pandoc。文字与表格可在 PPT 中编辑，R 图表以�
 HTML 幻灯片可在浏览器中打开，用方向键翻页。
 示例中的 HTML 标签与 CSS 样式（如 span、div、.smaller）主要适用于 HTML，PPTX 不一定保留相同效果。跨格式图片建议使用 Markdown 图片语法或 knitr::include_graphics()。
 
+
+## 在线分享
+
+output 文件夹已纳入版本管理。每次修改后先运行 source("render.R")，再提交并推送生成文件。
+
+首次发布：仓库 Settings → Pages → Deploy from a branch，选择 main 和 /(root)，点击 Save。
+发布成功后：
+- 在线播放：https://a-phantomhive.github.io/Presentations/
+- 下载 PPTX：https://a-phantomhive.github.io/Presentations/output/slides.pptx
+
+在线版本采用 HTML 排版；PPTX 不会继承 HTML 的 CSS 样式。
