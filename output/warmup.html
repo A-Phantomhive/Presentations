@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quick Association Challenge</title>
+<style>
+:root{--paper:#fffef2;--blue:#1565c0;--ink:#203349;--muted:#647386}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}header{padding:22px 4vw;border-bottom:1px solid #dae0df;display:flex;align-items:center;justify-content:space-between;gap:16px}h1{font-size:clamp(20px,2.3vw,32px);margin:0;color:var(--blue)}a{color:var(--blue)}button,select{font:inherit;padding:11px 18px;border:1px solid #b9c9d8;border-radius:7px;background:white;color:var(--ink);cursor:pointer}button.primary{background:var(--blue);color:white;border-color:var(--blue)}button:disabled{opacity:.45;cursor:default}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #e0a11c;outline-offset:3px}main{max-width:1320px;margin:auto;padding:26px 4vw}h2{font-size:clamp(28px,3.4vw,46px);margin:12px 0 20px}h3{color:var(--blue)}p,li{font-size:clamp(18px,1.8vw,25px);line-height:1.5}.eyebrow{font-size:15px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}.vocab{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:25px 0}.vocab section{border-top:3px solid var(--blue)}.vocab p{font-size:24px;line-height:1.8}.note{font-size:17px;color:var(--muted)}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px}.labels{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:18px}.label{padding:20px;border-top:4px solid var(--blue);background:#eef4f9;text-align:center;min-height:125px}.label strong{font-size:clamp(20px,2.6vw,36px);display:block;line-height:1.3}.label small{font-size:16px;display:block;margin-bottom:10px;color:var(--muted)}#word{height:230px;display:flex;align-items:center;justify-content:center;font-size:clamp(48px,8vw,100px);font-weight:bold;text-align:center}#feedback{height:40px;text-align:center;font-size:25px;color:var(--blue)}#progress{color:var(--muted);font-size:17px;text-align:center;min-height:24px}.mapping{font-size:24px;line-height:1.6}.hidden{display:none!important}footer{max-width:1320px;margin:20px auto;padding:18px 4vw;border-top:1px solid #dae0df;font-size:14px;color:var(--muted)}details{margin-top:22px}summary{cursor:pointer;font-size:17px}details p{font-size:16px}.settings{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:22px 0}.settings label{font-size:16px}.status{font-weight:bold;color:var(--blue)}@media(max-width:700px){.vocab{grid-template-columns:1fr 1fr}.vocab p{font-size:19px}header{align-items:flex-start;flex-direction:column}.label{padding:12px}#word{height:190px}.label strong{font-size:23px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body><audio id="music" src="the-clock-is-ticking.mp3" loop preload="auto"></audio>
+<header><h1>Quick Association Challenge</h1><div><a href="slides.html" id="back">Back to slides</a> &nbsp; <button id="sound">Sound on</button> <button id="fullscreen">Full screen</button><span id="audioStatus" role="status" style="font-size:14px"></span></div></header>
+<main>
+<section id="intro">
+<div class="eyebrow">A classroom demonstration inspired by the IAT · 4 stages</div>
+<h2>Same words. Different pairings.</h2>
+<p>Classify each word. Raise your <strong>left or right hand</strong>, or decide in your mind.</p>
+<div class="vocab">
+<section><h3>FLOWERS</h3><p>rose<br>lily<br>tulip<br>daisy</p></section>
+<section><h3>INSECTS</h3><p>ant<br>bee<br>fly<br>mosquito</p></section>
+<section><h3>GOOD WORDS</h3><p>happy<br>love<br>joy<br>peace</p></section>
+<section><h3>BAD WORDS</h3><p>sad<br>hate<br>pain<br>fear</p></section>
+</div>
+<p class="note">Not sure about a word? Ask before we start. This is not an English vocabulary test.</p>
+<details><summary>Word help / 词汇说明</summary><p>rose 玫瑰 · lily 百合 · tulip 郁金香 · daisy 雏菊<br>ant 蚂蚁 · bee 蜜蜂 · fly 苍蝇 · mosquito 蚊子<br>happy 快乐 · love 爱 · joy 喜悦 · peace 和平<br>sad 悲伤 · hate 憎恨 · pain 痛苦 · fear 恐惧</p><p>For a multilingual class, explain unfamiliar items in the students' shared language. Continue only once everyone can classify them.</p></details>
+<div class="settings"><label>Word duration <select id="speed"><option value="1200">1.2 seconds</option><option value="1500" selected>1.5 seconds</option><option value="2000">2 seconds</option><option value="2500">2.5 seconds</option></select></label><label>Pairing order <select id="order"><option value="AB">A then B</option><option value="BA">B then A</option></select></label></div>
+<div class="controls"><button class="primary" id="begin">We know the words · Continue</button></div>
+<details><summary>Teacher notes and sources</summary><p>This is an adapted, fixed-paced classroom demonstration. It records no individual responses, reaction times or personal data and calculates no IAT score. Feeling slower does not diagnose prejudice. Vocabulary, practice and rule switching can affect the experience.</p><p>The flower/insect words are drawn from the classic study; evaluation words are simplified for this class. Pairings are called A and B without promising which will feel easier. Order can be changed for another class, but this does not counterbalance order within a single group.</p><p><a href="https://faculty.washington.edu/agg/pdf/Gwald_McGh_Schw_JPSP_1998.OCR.pdf" target="_blank" rel="noopener">Greenwald, McGhee &amp; Schwartz (1998)</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9170636/" target="_blank" rel="noopener">Best research practices for the IAT</a></p></details>
+</section>
+<section id="activity" class="hidden">
+<div class="eyebrow" id="phaseCount"></div><h2 id="phaseTitle"></h2><p id="instruction"></p>
+<div class="labels"><div class="label"><small>YOUR LEFT HAND</small><strong id="leftLabel"></strong></div><div class="label"><small>YOUR RIGHT HAND</small><strong id="rightLabel"></strong></div></div>
+<div id="word">Ready?</div><div id="feedback"></div><div id="progress"></div>
+<div class="controls"><button class="primary" id="play">Start</button><button id="replay">Restart this stage</button><button id="next" disabled>Next stage</button><button id="home">Back to word list</button></div>
+<p class="note">Space: start / pause / resume. Classify by the category, not by whether you personally like the item.</p>
+</section>
+<section id="finish" class="hidden"><div class="eyebrow">Challenge complete</div><h2>Thanks for taking part!</h2><p>Let's return to the slides.</p><div class="controls"><a id="discussionLink" href="slides.html#4" style="background:#1565c0;color:white;padding:12px 20px;border-radius:7px;text-decoration:none">Continue to discussion</a><button id="again">Restart activity</button></div></section>
+</main>
+<footer>No account, connection or installation needed. Every word is followed by the correct side. Only the teacher controls playback.</footer>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const WORDS={flowers:['rose','lily','tulip','daisy'],insects:['ant','bee','fly','mosquito'],good:['happy','love','joy','peace'],bad:['sad','hate','pain','fear']};
+const NAMES={flowers:'FLOWERS',insects:'INSECTS',good:'GOOD WORDS',bad:'BAD WORDS'};
+const MAPS={A:{left:['flowers','good'],right:['insects','bad']},B:{left:['insects','good'],right:['flowers','bad']}};
+let phases=[],phaseIndex=0,items=[],itemIndex=0,timer=null,running=false,done=false,state='ready',mainDuration=1500;
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pool(cats){return cats.flatMap(cat=>WORDS[cat].map(word=>({word,cat})));}
+function trials(kind){if(kind==='target')return shuffle(pool(['flowers','insects']));if(kind==='attribute')return shuffle(pool(['good','bad']));let target=shuffle(pool(['flowers','insects'])),attribute=shuffle(pool(['good','bad']));if(kind==='mixedPractice'){target=shuffle(['flowers','insects'].flatMap(cat=>shuffle(pool([cat])).slice(0,2)));attribute=shuffle(['good','bad'].flatMap(cat=>shuffle(pool([cat])).slice(0,2)));}return target.flatMap((v,i)=>[v,attribute[i]]);}
+function buildPhases(first,second){const m=MAPS[first],n=MAPS[second];return [
+{title:'Flowers or insects',kind:'target',map:{left:[m.left[0]],right:[m.right[0]]},practice:true},
+{title:'Good or bad words',kind:'attribute',map:{left:['good'],right:['bad']},practice:true},
+{title:'First pairing',kind:'mixed',map:m,practice:false},
+{title:'Second pairing: the categories switch sides',kind:'mixed',map:n,practice:false,switching:true}];}
+const music=$('music');music.volume=0.3;
+function playMusic(){if(music.muted||!running)return;const result=music.play();if(result&&result.catch)result.catch(()=>{$('audioStatus').textContent='Audio unavailable. Check the MP3 or click Sound on.';});}
+function stopMusic(reset=false){music.pause();if(reset)music.currentTime=0;}
+$('sound').onclick=()=>{music.muted=!music.muted;$('sound').textContent=music.muted?'Sound off':'Sound on';$('audioStatus').textContent='';if(music.muted)music.pause();else if(running)playMusic();};
+music.addEventListener('error',()=>{$('audioStatus').textContent='Audio file not found or unsupported.';});
+function stop(){clearTimeout(timer);timer=null;running=false;}
+function screen(id){['intro','activity','finish'].forEach(x=>$(x).classList.toggle('hidden',x!==id));}
+function loadPhase(){stop();stopMusic(true);done=false;state='ready';items=trials(phases[phaseIndex].kind);itemIndex=0;const p=phases[phaseIndex];screen('activity');$('phaseCount').textContent=`Stage ${phaseIndex+1} of ${phases.length}`;$('phaseTitle').textContent=p.title;$('instruction').textContent=p.switching?'Check the new left/right positions. Good and bad words will keep their original sides.':p.practice?'Classify the word. The correct side appears after each word.':'Follow the rules above. Decide first; the correct side appears after each word.';$('leftLabel').textContent=p.map.left.map(x=>NAMES[x]).join(' or ');$('rightLabel').textContent=p.map.right.map(x=>NAMES[x]).join(' or ');$('word').textContent='Ready?';$('feedback').textContent='';$('progress').textContent=`${items.length} words · ${p.practice?'Category warm-up':'Combined round'}`;$('play').disabled=false;$('play').textContent='Start';$('next').disabled=true;}
+function schedule(fn,ms){timer=setTimeout(()=>{timer=null;if(running)fn();},ms);}
+function countdown(n){state='countdown';$('word').textContent=n;$('feedback').textContent='Get ready';schedule(()=>n>1?countdown(n-1):showWord(),700);}
+function showWord(){state='word';const p=phases[phaseIndex],it=items[itemIndex];$('word').textContent=it.word;$('feedback').textContent='';$('progress').textContent=`Word ${itemIndex+1} of ${items.length}`;schedule(()=>{state='answer';$('feedback').textContent=p.map.left.includes(it.cat)?'← LEFT':'RIGHT →';schedule(gap,900);},p.practice?2000:mainDuration);}
+function gap(){state='gap';$('word').textContent='';$('feedback').textContent='';schedule(advance,300);}
+function advance(){itemIndex++;if(itemIndex>=items.length){stop();stopMusic(true);done=true;state='done';$('word').textContent='Stage complete';$('feedback').textContent='';$('play').disabled=true;$('next').disabled=false;$('next').textContent=phaseIndex===phases.length-1?'Finish & discuss':'Next stage';}else showWord();}
+function toggle(){if(done)return;if(running){stop();stopMusic();state='paused';$('word').textContent='Paused';$('feedback').textContent='Resume repeats the current word.';$('play').textContent='Resume';}else{running=true;playMusic();$('play').textContent='Pause';countdown(3);}}
+$('begin').onclick=()=>{mainDuration=Number($('speed').value);const order=$('order').value;phases=buildPhases(order[0],order[1]);phaseIndex=0;loadPhase();};
+$('play').onclick=toggle;$('replay').onclick=loadPhase;$('next').onclick=()=>{if(!done)return;if(++phaseIndex>=phases.length){stop();stopMusic(true);screen('finish');}else loadPhase();};
+function home(){stop();stopMusic(true);screen('intro');}$('home').onclick=home;$('again').onclick=home;
+document.addEventListener('keydown',e=>{if(e.code==='Space'&&!$('activity').classList.contains('hidden')&&!['BUTTON','SELECT','INPUT','A'].includes(document.activeElement.tagName)){e.preventDefault();toggle();}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&running)toggle();});
+$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{$('fullscreen').textContent='Use browser full screen (F11)';}};
+$('back').href=location.pathname.replace(/\\/g,'/').includes('/output/')?'slides.html#3':'output/slides.html#3';
+$('discussionLink').href=location.pathname.replace(/\\/g,'/').includes('/output/')?'slides.html#4':'output/slides.html#4';
+</script>
+</body></html>
+
+
+
+
+
